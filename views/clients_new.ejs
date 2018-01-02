@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<h1>ADMIN PANEL</h1>
+<h3>--New (Create a Client)</h3>
+
+<form action="/clients" method="POST">
+    <input type="text" name="firstname" placeholder="Firstname">
+    <input type="text" name="surname" placeholder="Surname">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <button>Submit</button>
+</form>
+
+<% include ./partials/footer %>

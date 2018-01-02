@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+
+<h1>ADMIN PANEL</h1>
+<h3>--Show</h3>
+
+<ul>
+    
+    <li>Firstname: <%= client.firstname %></li>
+    <li>Surname: <%= client.surname %></li>
+    <li>Email: <%= client.email %></li>
+    <li>Password: <%= client.password %></li>
+    <li><a href="/clients/<%= client._id %>/edit">--> Edit</a></li>
+    <li><a href="">--> Delete</a></li>
+    <br>
+
+</ul>
+
+<% include ./partials/footer %>

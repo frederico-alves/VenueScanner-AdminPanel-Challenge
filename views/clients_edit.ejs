@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<h1>ADMIN PANEL</h1>
+<h3>--Edit (Edits a Client)</h3>
+
+<form action="/clients/<%= client._id %>?_method=PUT" method="POST">
+    <input type="text" name="client[firstname]" placeholder="Firstname" value="<%= client.firstname %>">
+    <input type="text" name="client[surname]" placeholder="Surname" value="<%= client.surname %>">
+    <input type="email" name="client[email]" placeholder="Email" value="<%= client.email %>">
+    <input type="password" name="client[password]" placeholder="Password" value="<%= client.password %>">
+    <button>Submit</button>
+</form>
+
+<% include ./partials/footer %>

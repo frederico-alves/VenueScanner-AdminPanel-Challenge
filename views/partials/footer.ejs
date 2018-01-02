@@ -1,0 +1,15 @@
+
+
+<% if(!currentUser){ %>
+    <li><a href="/admin/login">Login Admin</a></li>
+    <p>You are NOT Logged In</p>
+<% } else { %>
+    <p>You are currently LOGGED IN as <%= currentUser.username %></p>
+    <li><a href="/index">See AdminPanel</a></li>
+    <li><a href="/admin/logout">Logout Admin</a></li>
+    
+    
+<% } %>
+
+</body>
+</html>
