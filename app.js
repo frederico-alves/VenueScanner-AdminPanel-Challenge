@@ -13,7 +13,9 @@ var express               = require('express'),
     passportLocalMongoose = require('passport-local-mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/vs_adminpanel', { useMongoClient: true });
+// mongoose.connect('mongodb://localhost/vs_adminpanel', { useMongoClient: true });
+mongoose.connect('mongodb://admin:admin@ds235877.mlab.com:35877/vs-adminpanel');
+
 var app = express();
 app.set('view engine', 'ejs'); // EJS FILE EXTENSION
 app.use(bodyParser.urlencoded({extended:true}));
