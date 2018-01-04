@@ -12,14 +12,14 @@ Option A - Explore the web app online
 3. Explore the web app (`GoogleChrome` or `MozillaFirefox`).
 ---
 Option B - Setup in a local machine
-1. Clone repository running `git clone https://github.com/fredericoAlvesJS/phonebook.git`<br>
+1. Clone repository running `git clone https://github.com/fredericoAlvesJS/VenueScanner-AdminPanel-Challenge.git`<br>
 2. Run `cd venuescanner-adminpanel`
-2. Run `npm install`. It will install Node dependencies automatically.
-3. Run `node app.js` for a dev server.
-4. Navigate to `http://localhost:3000/`.
-5. To generate the database: Run `mongod` from MongoDB 3.4.
-6. Login credentials `username: admin`, `password: admin`.
-5. Analyze the code with your favourite code editor.
+3. Run `npm install`. It will install Node dependencies automatically.
+4. Run `mongod` from MongoDB 3.4 *MUST BE INSTALLED.
+5. Run `node app.js` for a dev server.
+6. Navigate to `http://localhost:3000/`.
+7. Login credentials `username: admin`, `password: admin`.
+8. Analyze the code with your favourite code editor.
 
 ## FRONTED DEV
 Wireframe in `Adobe Illustrator CC`. Mockup in `Adobe Photoshop CC`
