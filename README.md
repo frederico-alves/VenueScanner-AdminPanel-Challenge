@@ -22,14 +22,14 @@ Option B - Setup in a local machine
 8. Analyze the code with your favourite code editor.
 
 ## FRONTED DEV
-Wireframe in `Adobe Illustrator CC`. Mockup in `Adobe Photoshop CC`
+Wireframe in `Adobe Illustrator CC`.<br>Mockup in `Adobe Photoshop CC`.<br>
 ![screenshot_06](https://user-images.githubusercontent.com/31135848/34549134-44e5c1fe-f0fe-11e7-9b06-b3173477cf81.png)
 
 Markup with `HTML@5.0`+`EJS@2.5.7`. Styled and animated with `CSS@3.0`
 ![screenshot_09](https://user-images.githubusercontent.com/31135848/34549751-0151b240-f103-11e7-9dce-1cbd73da081a.png)
 
 ## BACKEND DEV - Authentication
-The user must be logged as administrator to have the access to the other routes.
+The user must be logged in as administrator to have the access to the other routes.
 ![screenshot_01](https://user-images.githubusercontent.com/31135848/34548408-e0ea3e0e-f0f9-11e7-95e9-a3e1ca0e3342.png)<br>
 ![screenshot_02](https://user-images.githubusercontent.com/31135848/34548545-8d27e996-f0fa-11e7-82e5-c4b217842465.png)
 <br>
@@ -42,7 +42,7 @@ The `adminMustBeLoggedIn` middleware protects the views of the app from unwanted
 ![screenshot_07](https://user-images.githubusercontent.com/31135848/34549352-f6af3b4e-f0ff-11e7-8c61-4e995bbfff64.png)
 
 ## Model Schema
-User model with the fields: `login`, `password` for Administrators to login in the app.
+User model with the fields: `login`, `password` for Administrators to login in the app.<br>
 Clients model with the fields: `firstName`, `surname`, `email`, `password`.
 ![screenshot_08](https://user-images.githubusercontent.com/31135848/34549941-a5f9d7ea-f104-11e7-96dc-5a4977ae5cf0.png)
 
@@ -61,7 +61,7 @@ Administrator's view to edit the Client
 <br>
 ![screenshot_12](https://user-images.githubusercontent.com/31135848/34551019-a32b1d72-f10d-11e7-8a89-b4ffe0046c93.png)
 <br>
-Peace of code that finds and updates the Client in the database with `Mongoose@4.13.8` and `Express@4.16.2`
+Code that finds and updates the Client in the database with `Mongoose@4.13.8` and `Express@4.16.2`
 <br>
 ![screenshot_14](https://user-images.githubusercontent.com/31135848/34551021-a359e4e0-f10d-11e7-9eba-f50d58000711.png)
 
