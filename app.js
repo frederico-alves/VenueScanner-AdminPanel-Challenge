@@ -41,7 +41,6 @@ app.use(flash()); // Feedback Messages for User
 // });
 
 
-
 // PASSPORT CONFIG
 app.use(require('express-session')({
     secret: 'VenueScanner 2018 Admin Panel by Frederico Alves, LONDON',
@@ -67,10 +66,11 @@ app.use(function(req, res, next){
 
 // name       url           verb   desc.
 //===================================================
-// INDEX      /items        GET    Display a list of all items
-// NEW        /items/new    GET    Display form to make a new item
-// CREATE     /items        POST   Add new item to DB
-// SHOW       /items/:id    GET    Show info about one item
+// INDEX      /index            GET    Display a list of all clients
+// NEW        /clients/new      GET    Display form to make a new client
+// CREATE     /clients          POST   Add new client to DB
+// SHOW       /clients/:id      GET    Show info about one client
+// UPDATE     /clients/:id/edit GET    Edits info about one client
 
 // LAND --PAGE --------(show Admin login)---------
 app.get('/', function(req, res){
@@ -141,12 +141,6 @@ app.get("/clients/:id/edit", adminMustBeLoggedIn, function(req, res){
 
 // UPDATE --ROUTE --------(updated client to db)---------
 app.put("/clients/:id", adminMustBeLoggedIn, function(req, res){
-    // get data from form and add to clients array
-    // var firstname = req.body.firstname;
-    // var surname = req.body.surname;
-    // var email = req.body.email;
-    // var password = req.body.password;
-    // var editedClient = {firstname:firstname, surname:surname, email:email, password:password};
     // find and update the correct client
     Client.findByIdAndUpdate(req.params.id, req.body.client, function(err, updatedClient){
        if(err){
