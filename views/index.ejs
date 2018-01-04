@@ -1,22 +1,65 @@
-<% include ./partials/header %>
+<div class="index">
+<div class="container">
+    <% include ./partials/header %>
 
-<h1>ADMIN PANEL</h1>
-<h3>--Panel</h3>
+    <nav>
+        <div class="nav--logo"><a href="/index"><img src="./img/logo_365.png" alt="Logo"></a></div>
+        <div class="links">
+            <div id="current" class="nav--link register-admin">
+                <a href="/index">Dashboard</a>
+                <div class="white--effect"></div>
+            </div>
+            <div class="nav--link register-admin">
+                <a href="/admin/register">Register Admin</a>
+                <div class="white--effect"></div>
+            </div>
+            <div class="nav--link features">
+                <a href="/features">Features</a>
+                <div class="white--effect"></div>
+            </div>
+            <div class="nav--link logout">
+                <a href="/admin/logout">Logout</a>
+                <div class="white--effect"></div>
+            </div>
+        </div>
+    </nav>
 
-<li><a href="/admin/register">Track Administrators</a></li>
-<li><a href="/clients/new">Add Client</a></li>
+    <h1 class="page--title">Welcome <%= currentUser.username %></h1>
 
-<ul>
-    <% clients.forEach(function(client){ %>
-    <li>Firstname: <%= client.firstname %></li>
-    <li>Surname: <%= client.surname %></li>
-    <li>Email: <%= client.email %></li>
-    <li>Password: <%= client.password %></li>
-    <a href="/clients/<%= client._id %>"><button>--> Show</button></a>
-    <a href="/clients/<%= client._id %>/edit"><button>--> Edit</button></a>
-    <form id="delete-form" action="/clients/<%= client._id %>?_method=DELETE" method="POST"><button>--> Delete</button></form>
-    <br>
-    <% }); %>
-</ul>
+    <% if(error && error.length > 0){ %>
+        <h1 style="width:70%; margin: 0 auto;" class="message__landing message__landing--error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= error %></h1><br>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+        <h1 style="width:70%; margin: 0 auto;" class="message__landing message__landing--success"><i class="fa fa-check" aria-hidden="true"></i> <%= success %></h1><br>
+    <% } %>
 
-<% include ./partials/footer %>
+
+    <table class="table__container">
+
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th style="text-align:center;"><a class="btn__table btn__table--btn" href="/clients/new">Add New User</a></th>
+                </tr>
+            </thead>
+            <br>
+            <tbody>
+                <% clients.forEach(function(client){ %>
+                <tr>
+                    <td><%= client.firstname %></td>
+                    <td><%= client.surname %></td>
+                    <td><%= client.email %></td>
+                    <td style="text-align:center; width: 33%;">
+                        <a href="/clients/<%= client._id %>"><button class="btn__table">Show</button></a>
+                        <a href="/clients/<%= client._id %>/edit"><button class="btn__table">Edit</button></a>
+                        <form style="display:inline-block;" id="delete-form" action="/clients/<%= client._id %>?_method=DELETE" method="POST"><button class="btn__table" onclick="return confirm('Are you sure you want to delete: <%= client.firstname %> <%= client.surname %>?')">Delete</button></form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+    </div> <!-- .container -->
+</div>

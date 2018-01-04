@@ -1,14 +1,69 @@
-<% include ./partials/header %>
+<div class="index">
+    <div class="container">
+        <% include ./partials/header %>
+    
+        <nav>
+            <div class="nav--logo"><a href="/index"><img src="../../img/logo_365.png" alt="Logo"></a></div>
+            <div class="links">
+                <div class="nav--link register-admin">
+                    <a href="/index">Dashboard</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div class="nav--link register-admin">
+                    <a href="/admin/register">Register Admin</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div class="nav--link features">
+                    <a href="/features">Features</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div class="nav--link logout">
+                    <a href="/admin/logout">Logout</a>
+                    <div class="white--effect"></div>
+                </div>
+            </div>
+        </nav>
 
-<h1>ADMIN PANEL</h1>
-<h3>--Edit (Edits a Client)</h3>
+        <% if(error && error.length > 0){ %>
+            <h1 class="message__landing message__landing--error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= error %></h1>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <h1 class="message__landing message__landing--success"><i class="fa fa-check" aria-hidden="true"></i> <%= success %></h1>
+        <% } %>
+    
+        <h1 class="page--title">Edit User</h1>
 
-<form action="/clients/<%= client._id %>?_method=PUT" method="POST">
-    <input type="text" name="client[firstname]" placeholder="Firstname" value="<%= client.firstname %>">
-    <input type="text" name="client[surname]" placeholder="Surname" value="<%= client.surname %>">
-    <input type="email" name="client[email]" placeholder="Email" value="<%= client.email %>">
-    <input type="password" name="client[password]" placeholder="Password" value="<%= client.password %>">
-    <button>Submit</button>
-</form>
+        <div class="container__center">
+            <form action="/clients/<%= client._id %>?_method=PUT" method="POST">
+                <div class="inputs" style="display:flex; max-width: 900px;">
+                    <div class="form__group new-group">
+                        <input value="<%= client.firstname %>" class="form__input" type="text" name="client[firstname]" placeholder="First Name" id="firstname" pattern=".{3,}" required title="First Name must have 3 chars minimum">
+                        <label class="form__label" for="firstname">First Name</label>
+                    </div>
+                    <div class="form__group new-group">
+                        <input value="<%= client.surname %>" class="form__input" type="text" name="client[surname]" placeholder="Surname" id="surname" pattern=".{3,}" required title="Surname must have 3 chars minimum">
+                        <label class="form__label" for="surname">Surname</label>
+                    </div>
+                    <div class="form__group new-group">
+                        <input value="<%= client.email %>" class="form__input" type="email" name="client[email]" placeholder="Email" id="email" required>
+                        <label class="form__label" for="email">Email</label>
+                    </div>
+                    <div class="form__group new-group">
+                        <input value="<%= client.password %>" class="form__input" type="password" name="client[password]" placeholder="Password" id="password" pattern=".{5,}" required title="User password must have 5 chars minimum">
+                        <label class="form__label" for="password">Password</label>
+                    </div>
+                </div>
 
-<% include ./partials/footer %>
+
+                <div style="text-align:center;">
+                    <button class="btn btn--white">Update User</button>
+                    <br>
+                    <div class="nav--link current btn--link"><a style="text-align:center;" href="/index">cancel</a></div>
+                </div>
+                
+
+            </form>
+        </div>
+    
+        </div> <!-- .container -->
+    </div>

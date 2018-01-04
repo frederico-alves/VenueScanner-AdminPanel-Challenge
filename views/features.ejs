@@ -1,0 +1,74 @@
+<div class="index">
+        <div class="container">
+            <% include ./partials/header %>
+    
+        <nav>
+            <div class="nav--logo"><a href="/index"><img src="../img/logo_365.png" alt="Logo"></a></div>
+            <div class="links">
+                <div class="nav--link register-admin">
+                    <a href="/index">Dashboard</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div class="nav--link register-admin">
+                    <a href="/admin/register">Register Admin</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div id="current" class="nav--link features">
+                    <a href="/features">Features</a>
+                    <div class="white--effect"></div>
+                </div>
+                <div class="nav--link logout">
+                    <a href="/admin/logout">Logout</a>
+                    <div class="white--effect"></div>
+                </div>
+            </div>
+        </nav>
+    
+        <% if(error && error.length > 0){ %>
+            <h1 style="width:70%; margin: 0 auto;" class="message__landing message__landing--error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= error %></h1><br>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <h1 style="width:70%; margin: 0 auto;" class="message__landing message__landing--success"><i class="fa fa-check" aria-hidden="true"></i> <%= success %></h1><br>
+        <% } %>
+    
+        <h1 class="page--title">Features</h1>
+
+        <div class="width70">
+            <div class="list-group">
+                <h1 class="page--subtitle">Accomplished</h1>
+                <div class="line line__green"></div>
+                <ul>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Node.JS and MongoDB implementation</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> NEW, EDIT, DELETE - client on DB</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Delete ALERT - confirming user’s decision</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Internal pages secored by Passport.JS</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Create new Administrators</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Admin password stored securely in DB</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Flash Alerts - dynamic messages for users</li>
+                    <li class="page--list"><i class="fa fa-check" aria-hidden="true"></i> Styling - intuitive and accessible UI</li>
+                </ul>
+            </div>
+            <div class="list-group">
+                <h1 class="page--subtitle">To Improve</h1>
+                <div class="line line__orange"></div>
+                <ul>
+                    <li class="page--list"><i class="fa fa-exclamation" aria-hidden="true"></i> Create panel to manage administrators</li>
+                    <li class="page--list"><i class="fa fa-exclamation" aria-hidden="true"></i> Store Client password with Hash and Salt</li>
+                    <li class="page--list"><i class="fa fa-exclamation" aria-hidden="true"></i> Make unique email for clients</li>
+                    <li class="page--list"><i class="fa fa-exclamation" aria-hidden="true"></i> Password strength check ability</li>
+                    <li class="page--list"><i class="fa fa-exclamation" aria-hidden="true"></i> Real time messages for wrong Admin login</li>
+                </ul>
+            </div>
+        </div>
+    
+    
+    
+        <div class="transform__center" style="margin-top:20px;">
+        
+        <a class="btn__table btn__table--btn" href="/index">Dashboard</a>
+        
+    
+        </div> <!-- /.transform__center -->
+    
+        </div> <!-- .container -->
+    </div>

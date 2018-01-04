@@ -1,14 +1,68 @@
-<% include ./partials/header %>
+<div class="index">
+        <div class="container">
+            <% include ./partials/header %>
+        
+            <nav>
+                <div class="nav--logo"><a href="/index"><img src="../img/logo_365.png" alt="Logo"></a></div>
+                <div class="links">
+                    <div class="nav--link register-admin">
+                        <a href="/index">Dashboard</a>
+                        <div class="white--effect"></div>
+                    </div>
+                    <div class="nav--link register-admin">
+                        <a href="/admin/register">Register Admin</a>
+                        <div class="white--effect"></div>
+                    </div>
+                    <div class="nav--link features">
+                        <a href="/features">Features</a>
+                        <div class="white--effect"></div>
+                    </div>
+                    <div class="nav--link logout">
+                        <a href="/admin/logout">Logout</a>
+                        <div class="white--effect"></div>
+                    </div>
+                </div>
+            </nav>
 
-<h1>ADMIN PANEL</h1>
-<h3>--New (Create a Client)</h3>
+            <% if(error && error.length > 0){ %>
+                <h1 class="message__landing message__landing--error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= error %></h1>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <h1 class="message__landing message__landing--success"><i class="fa fa-check" aria-hidden="true"></i> <%= success %></h1>
+            <% } %>
+        
+            <h1 class="page--title">Add new User</h1>
+  
+            <div class="container__center">
+                <form action="/clients" method="POST">
+                    <div class="inputs" style="display:flex; max-width: 900px;">
+                        <div class="form__group new-group">
+                            <input class="form__input" type="text" name="firstname" placeholder="First Name" id="firstname" pattern=".{3,}" required title="First Name must have 3 chars minimum">
+                            <label class="form__label" for="firstname">First Name</label>
+                        </div>
+                        <div class="form__group new-group">
+                            <input class="form__input" type="text" name="surname" placeholder="Surname" id="surname" pattern=".{3,}" required title="Surname must have 3 chars minimum">
+                            <label class="form__label" for="surname">Surname</label>
+                        </div>
+                        <div class="form__group new-group">
+                            <input class="form__input" type="email" name="email" placeholder="Email" id="email" required>
+                            <label class="form__label" for="email">Email</label>
+                        </div>
+                        <div class="form__group new-group">
+                            <input class="form__input" type="password" name="password" placeholder="Password" id="password" pattern=".{5,}" required title="User password must have 5 chars minimum">
+                            <label class="form__label" for="password">Password</label>
+                        </div>
+                    </div>
 
-<form action="/clients" method="POST">
-    <input type="text" name="firstname" placeholder="Firstname">
-    <input type="text" name="surname" placeholder="Surname">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <button>Submit</button>
-</form>
 
-<% include ./partials/footer %>
+                    <div style="text-align:center;">
+                        <button class="btn btn--white">Create User</button>
+                        <br>
+                        <div class="nav--link current btn--link"><a style="text-align:center;" href="/index">cancel</a></div>
+                    </div>
+
+                </form>
+            </div>
+        
+            </div> <!-- .container -->
+        </div>

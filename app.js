@@ -14,7 +14,7 @@ var express               = require('express'),
 
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/vs_adminpanel', { useMongoClient: true });
-mongoose.connect('mongodb://admin:admin@ds235877.mlab.com:35877/vs-adminpanel');
+// mongoose.connect('mongodb://admin:admin@ds235877.mlab.com:35877/vs-adminpanel');
 
 var app = express();
 app.set('view engine', 'ejs'); // EJS FILE EXTENSION
@@ -109,10 +109,10 @@ app.post('/clients', adminMustBeLoggedIn, function(req, res){
             console.log(err);
         } else {
             //redirect back to panel page
-            req.flash('success', 'Client successfully created');
+            req.flash('success', 'User successfully created');
             res.redirect("/index");
         }
-    })
+    });
 });
 
 // SHOW --ROUTE --------(show specific client)---------
@@ -120,7 +120,7 @@ app.get('/clients/:id', adminMustBeLoggedIn, function(req, res){
     // find the campground with provided ID
     Client.findById(req.params.id).populate('clients').exec(function(err, foundClient){
         if(err){
-            req.flash('error', 'Client not found');
+            req.flash('error', 'User not found');
             console.log(err);
         } else {
             // render show page with details
@@ -151,7 +151,7 @@ app.put("/clients/:id", adminMustBeLoggedIn, function(req, res){
            res.redirect("/index");
        } else {
            //redirect somewhere(show page)
-           req.flash('success', 'Client successfully updated');
+           req.flash('success', 'User successfully updated');
            res.redirect("/clients/" + req.params.id);
        }
     });
@@ -164,7 +164,7 @@ app.delete("/clients/:id", adminMustBeLoggedIn, function(req, res){
            req.flash('error', 'Something went wrong');
            res.redirect("/index");
        } else {
-           req.flash('success', 'Client successfully deleted');
+           req.flash('success', 'User successfully deleted');
            res.redirect("/index");
        }
     });
@@ -185,7 +185,7 @@ app.post('/admin/register', adminMustBeLoggedIn, function(req, res){
             return res.redirect('admin/register');
         }
         passport.authenticate('local')(req, res, function(){
-            req.flash('success', 'Welcome to YelpCamp ' + user.username);
+            req.flash('success', user.username + ' registered as a new Administrator');
             res.redirect('/index');
         });
     });
@@ -213,14 +213,20 @@ app.get('/admin/logout', function(req, res){
 });
 
 
+// Features --ROUTE ----------------------
+// Show features page
+app.get('/features', function(req, res){
+    res.render('features');
+});
+
 
 // MIDDLEWARE TO CHECK IF USER IS LOGGED IN
 function adminMustBeLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return  next();
     }
-    req.flash('error', 'You need to be logged in to do that');
-    res.redirect('/admin/login');
+    req.flash('error', 'Permition denied');
+    res.redirect('/');
 }
 
 ///////////////////////////////////

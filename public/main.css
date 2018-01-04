@@ -1,9 +1,443 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /* Inherit the parent body{box-sizing: border-box} for every single element */
+}
+
+html {
+    /*
+        Allows the user Zoom in the page:
+        10px`default for our project`/ 16px`default by the browser`
+        font-size: 10px/16px = 62.5%`for a better practice`
+    */
+
+    font-size: 62.5%;
+}
+
 body {
-    background-color: indigo;
-    color: white;
+    font-family: Lato;
+    color: black;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0;
+
+    position: relative;
 }
 
 a {
     color: white;
     text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.container__center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.width70 {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.transform__center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.landing-page {
+    background-image: linear-gradient(to right, #56ccf2, #2f80ed);
+    width: 100%;
+    height: 100vh;
+}
+
+.img__logo {
+    width: 100%;
+    height: 78px;
+    background-image: url(./img/logo_365.png);
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
+}
+
+.form__group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.inputs {
+    margin-bottom: 25px;
+}
+
+.form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.8rem 2rem;
+    border-radius: 6px;
+    background-color: rgba(white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.20);
+    width: 100%;
+    display: block;
+    transition: all .3s;
+}
+
+.form__input:focus{
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(black, .1);
+    border-bottom: 3px solid #71f932;
+}
+
+.form__input:focus:invalid{
+    border-bottom: 3px solid #f27b06;
+}
+
+.form__label{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.9rem;
+    letter-spacing: 3px;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 1.5rem 3.5rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #56ccf2;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn:active,
+.btn:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.btn--white {
+    background-color: white;
+    color: #56ccf2;
+}
+
+.btn--white::after {
+    background-color: white;
+}
+
+.btn::after {
+    content: '';
+    color: #56ccf2;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn__table {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 0.6rem 1.2rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    background-color: transparent;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+}
+
+.btn__table--btn {
+    background-color: white;
+    color: #56ccf2;
+    padding: 10px 20px;
+}
+
+.btn__table--btn:focus,
+.btn__table--btn:hover,
+.btn__table--btn:active {
+    padding: 10px 25px;
+}
+
+
+.login-form__group {
+    display: flex;
+    justify-content: center;
+}
+
+.message__landing{
+    color: white;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+
+.message__landing--success{
+    border-bottom: 3px solid #71f932;
+}
+
+.message__landing--error{
+    border-bottom: 3px solid #f27b06;
+}
+
+.index {
+    background-image: linear-gradient(to right, #56ccf2, #2f80ed);
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav--logo {
+    display: inline-block;
+}
+
+.nav--logo img {
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.links {
+    margin-right: 20px; 
+}
+
+.nav--link {
+    display: inline-block;
+    border-bottom: 3px solid white;
+    margin: 0 15px;
+
+    position: relative;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav--link a {
+    font-weight: 700;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 10px;    
+}
+
+.white--effect {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+
+    position: absolute;
+    top: -50px;
+
+    transition: all 0.1s ease-in-out;
+}
+
+
+#current > .white--effect,
+.nav--link a:hover + .white--effect {
+    transform: translateY(20px);
+}
+
+.current,
+#current,
+.nav--link:hover {
+    border-bottom: 0px solid white;
+}
+
+.btn--link a {
+    transform: scale(0.9);
+    transition: transform .2s;
+}
+
+.btn--link:hover a{
+    transform: scale(1.1);
+}
+
+.page--title {
+    color:white;
+    font-size:40px;
+    font-weight: 900;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.page--subtitle--show {
+    color:white;
+    font-size:20px;
+    font-weight: 300;
+    text-align: center;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+/* ================================== */
+/* TABLE */
+/* ================================== */
+
+.table__container {
+    color: white;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0 auto;
+    width: 70%;
+    border-collapse: collapse;
+    
+}
+
+th {
+    text-align: left;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid white;
+    padding: 5px 10px;
+}
+
+tr > td {
+    transition: all .2s;
+}
+
+tr:hover > td{
+    color: #56ccf2;
+    background-color: white;
+}
+
+tr:hover td:last-of-type form > *,
+tr:hover td:last-of-type a > * {
+
+    color: #56ccf2;
+}
+
+/* ================================== */
+/* NEW & EDIT CLIENT */
+/* ================================== */
+
+.new-group {
+    margin: 0 5px;
+    width: 250px;
+}
+
+/* ================================== */
+/* SHOW CLIENT */
+/* ================================== */
+
+.show {
+    color: white;
+    font-size: 1.6rem;
+    margin: 5px 5px;
+}
+
+/* ================================== */
+/* FEATURES CLIENT */
+/* ================================== */
+
+.page--subtitle {
+    color:white;
+    font-size:18px;
+    font-weight: 900;
+    text-align: left;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page--list {
+    color:white;
+    font-size:15px;
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.line__green {
+    border-bottom: 3px solid #71f932;
+}
+
+.line__orange {
+    border-bottom: 3px solid #f27b06;
 }
