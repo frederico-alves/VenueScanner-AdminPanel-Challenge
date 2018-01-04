@@ -1,9 +1,9 @@
 # Venuescanner AdminPanel
 [CLICK HERE to View the Project Published](https://venuescanner-adminpanel.herokuapp.com/) <br>
 Admin panel to manage the users of a platform, made with Node.JS and MongoDB
-
-![screenshot_01](https://user-images.githubusercontent.com/31135848/34548408-e0ea3e0e-f0f9-11e7-95e9-a3e1ca0e3342.png)
-
+<br>
+![demo_01_sm](https://user-images.githubusercontent.com/31135848/34550462-0685e992-f109-11e7-8871-2a99fb861952.png)
+<br>
 
 ## Install
 Option A - Explore the web app online
@@ -40,6 +40,7 @@ The password of the administrators are stored safely in the database with `salt`
 
 ## Authentication
 The user must be logged as administrator to have the access to the other routes.
+![screenshot_01](https://user-images.githubusercontent.com/31135848/34548408-e0ea3e0e-f0f9-11e7-95e9-a3e1ca0e3342.png)<br>
 ![screenshot_02](https://user-images.githubusercontent.com/31135848/34548545-8d27e996-f0fa-11e7-82e5-c4b217842465.png)
 <br>
 
