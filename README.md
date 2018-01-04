@@ -22,7 +22,7 @@ Option B - Setup in a local machine
 5. Analyze the code with your favourite code editor.
 
 ## FRONTED DEV
-Wirefram in `Adobe Illustrator CC`. Mockup in `Adobe Photoshop CC`
+Wireframe in `Adobe Illustrator CC`. Mockup in `Adobe Photoshop CC`
 ![screenshot_06](https://user-images.githubusercontent.com/31135848/34549134-44e5c1fe-f0fe-11e7-9b06-b3173477cf81.png)
 
 Markup with `HTML@5.0`+`EJS@2.5.7`. Styled and animated with `CSS@3.0`
@@ -52,6 +52,18 @@ The password of the administrators are stored safely in the database with `salt`
 
 ## RESTful Routes
 ![screenshot_11](https://user-images.githubusercontent.com/31135848/34550159-70c47f7e-f106-11e7-9c29-5c8687135bc8.png)
+
+## SHOW, UPDATE AND DELETE
+Actions available to manipulate each Client in the database<br>
+![screenshot_13](https://user-images.githubusercontent.com/31135848/34551020-a34411a6-f10d-11e7-80c8-f06fd772de36.png)
+<br>
+Administrator's view to edit the Client
+<br>
+![screenshot_12](https://user-images.githubusercontent.com/31135848/34551019-a32b1d72-f10d-11e7-8a89-b4ffe0046c93.png)
+<br>
+Peace of code that finds and updates the Client in the database with `Mongoose@4.13.8` and `Express@4.16.2`
+<br>
+![screenshot_14](https://user-images.githubusercontent.com/31135848/34551021-a359e4e0-f10d-11e7-9eba-f50d58000711.png)
 
 ## Further Information
 ![demo_02_sm](https://user-images.githubusercontent.com/31135848/34550738-235b4eca-f10b-11e7-9be8-a5f2cf9dce8e.png)
