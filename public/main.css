@@ -425,8 +425,9 @@ tr:hover td:last-of-type a > * {
     font-weight: 300;
     text-align: left;
     letter-spacing: 2px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 5px 10px;
+
+    transition: all .2s;
 }
 
 .line {
@@ -440,4 +441,9 @@ tr:hover td:last-of-type a > * {
 
 .line__orange {
     border-bottom: 3px solid #f27b06;
+}
+
+ul > li:hover {
+    background-color: white;
+    color: #56ccf2;
 }

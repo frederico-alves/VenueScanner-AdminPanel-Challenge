@@ -3,6 +3,7 @@
 // DEPENDENCIES
 var express               = require('express'),
     mongoose              = require('mongoose'),
+    any_index             = require('mongoose-any-index'),
     flash                 = require('connect-flash'),
     passport              = require('passport'),
     bodyParser            = require('body-parser'),
@@ -13,6 +14,8 @@ var express               = require('express'),
     passportLocalMongoose = require('passport-local-mongoose');
 
 mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://dev:dev@ds241677.mlab.com:41677/vs-adminpanel', { config: {autoIndex: false} });
+
 // mongoose.connect('mongodb://localhost/vs_adminpanel', { useMongoClient: true });
 // mongoose.connect('mongodb://admin:admin@ds235877.mlab.com:35877/vs-adminpanel');
 
@@ -215,7 +218,7 @@ app.get('/admin/logout', function(req, res){
 
 // Features --ROUTE ----------------------
 // Show features page
-app.get('/features', function(req, res){
+app.get('/features', adminMustBeLoggedIn, function(req, res){
     res.render('features');
 });
 
