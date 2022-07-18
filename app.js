@@ -226,7 +226,7 @@ function adminMustBeLoggedIn(req, res, next){
     res.redirect('/');
 }
 
-///////////////////////////////////
+/////////////////////////////////
 // SERVER RUNNING
 app.listen(app.get('port'), function(){
     console.log('VenueScanner --v.1 | Server running... on http://localhost:' + app.get('port'));

@@ -5,12 +5,7 @@ Admin panel to manage the users of a platform, made with Node.JS and MongoDB
 <br>
 
 ## Install
-Option A - Explore the web app online
-1. Open `https://venuescanner-adminpanel.herokuapp.com`
-2. Login credentials `username: admin`, `password: admin`.
-3. Explore the web app (`GoogleChrome` or `MozillaFirefox`).
----
-Option B - Setup in a local machine
+Setup in a local machine
 1. Clone repository running `git clone https://github.com/fredericoAlvesJS/VenueScanner-AdminPanel-Challenge.git`<br>
 2. Run `cd venuescanner-adminpanel`
 3. Run `npm install`. It will install Node dependencies automatically.
