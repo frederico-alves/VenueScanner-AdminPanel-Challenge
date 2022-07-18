@@ -6,7 +6,7 @@ Admin panel to manage the users of a platform, made with Node.JS and MongoDB
 
 ## Install
 Setup in a local machine
-1. Clone repository running `git clone https://github.com/fredericoAlvesJS/VenueScanner-AdminPanel-Challenge.git`<br>
+1. Clone repository running `git clone git@github.com:frederico-alves/VenueScanner-AdminPanel-Challenge.git`<br>
 2. Run `cd venuescanner-adminpanel`
 3. Run `npm install`. It will install Node dependencies automatically.
 4. Run `mongod` from MongoDB 3.4 *MUST BE INSTALLED.
