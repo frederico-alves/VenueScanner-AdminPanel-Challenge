@@ -1,5 +1,4 @@
 # Venuescanner AdminPanel
-[CLICK HERE to View the Project Published](https://venuescanner-adminpanel.herokuapp.com/) <br>
 Admin panel to manage the users of a platform, made with Node.JS and MongoDB
 <br>
 ![demo_03_sm](https://user-images.githubusercontent.com/31135848/34550847-10b72d74-f10c-11e7-96c9-f813dae8c427.png)
@@ -67,4 +66,4 @@ Code that finds and updates the Client in the database with `Mongoose@4.13.8` an
 
 ## Further Information
 ![demo_02_sm](https://user-images.githubusercontent.com/31135848/34550738-235b4eca-f10b-11e7-9be8-a5f2cf9dce8e.png)
-To get more information on the Admin Panel please feel free to message me or email to fredericoalvesJS@gmail.com or contact@fredericoalves.uk
+To get more information on the Admin Panel please feel free to message me or email to fredericoalves.info@gmail.com
